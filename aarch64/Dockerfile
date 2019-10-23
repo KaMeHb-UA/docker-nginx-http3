@@ -1,9 +1,9 @@
-FROM archlinux/base
+FROM agners/archlinuxarm
 
 RUN pacman -Syu --noconfirm
 
-COPY pkgs /pkgs
+COPY nginx-http3-1.16.1-1.pkg.tar.xz /
 
-RUN pacman -U --noconfirm /pkgs/nginx-http3-1.16.1-1-$(uname -m).pkg.tar.xz
+RUN pacman -U --noconfirm /nginx-http3-1.16.1-1.pkg.tar.xz
 
 RUN rm -rf /var/cache /pkgs
